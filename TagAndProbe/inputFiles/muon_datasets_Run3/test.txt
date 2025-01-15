@@ -1,5 +1,0 @@
-/store/data/Run2022G/Muon/RAW-RECO/ZMu-PromptReco-v1/000/362/696/00000/b7079b53-a77e-4950-aab5-09f9412750a6.root
-/store/data/Run2022G/Muon/RAW-RECO/ZMu-PromptReco-v1/000/362/696/00000/7465c590-5aee-4009-9089-dddce9f98e2a.root
-/store/data/Run2022G/Muon/RAW-RECO/ZMu-PromptReco-v1/000/362/696/00000/da9a4bf9-8eba-4526-afa3-35f12a22488c.root
-/store/data/Run2022G/Muon/RAW-RECO/ZMu-PromptReco-v1/000/362/696/00000/482fab32-3f9a-4f96-aa7d-2a5aac36bccd.root
-/store/data/Run2022G/Muon/RAW-RECO/ZMu-PromptReco-v1/000/362/696/00000/e8372224-dfbd-48fa-87c3-9e1ac0f33797.root

@@ -47,7 +47,7 @@ process.GlobalTag.globaltag = options.globalTag
 
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-        '/store/data/Run2024B/Muon0/MINIAOD/PromptReco-v1/000/379/253/00000/6dab757f-5a09-4e35-8a0f-1ba62ba9c20c.root'
+        'file:/eos/home-a/athachay/workarea/store/data/Run2024I/Muon0/RAW-RECO/ZMu-PromptReco-v1/000/386/478/00000/0609f134-dc53-42b1-9f60-aee7826b7aab.root'
     ),
 )
 
@@ -62,6 +62,9 @@ process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)
 )
 
+
+options.maxEvents = 10
+
 if options.maxEvents >= -1:
     process.maxEvents.input = cms.untracked.int32(options.maxEvents)
 if options.skipEvents >= 0:
@@ -72,13 +75,12 @@ process.options = cms.untracked.PSet(
 )
 
 process.p = cms.Path(
-    process.TAndPseq +
-    process.NtupleSeq
+    process.TAndPseq 
 )
 
 # Silence output
 process.load("FWCore.MessageService.MessageLogger_cfi")
-process.MessageLogger.cerr.FwkReport.reportEvery = 1000
+process.MessageLogger.cerr.FwkReport.reportEvery = 5
 
 # Adding ntuplizer
 process.TFileService=cms.Service('TFileService',fileName=cms.string(options.outputFile))

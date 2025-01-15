@@ -683,8 +683,8 @@ void TauNtuplizerRun3::analyze(const edm::Event& iEvent, const edm::EventSetup& 
             }
         }
     }
-
-    // store the information of the jet geometrically matcehd with the tau
+    
+    // store the information of the jet geometrically matcehd with the tau WHY ??
     if(L2CaloJets_ForIsoPix_Handle.isValid() && L2CaloJets_ForIsoPix_IsoHandle.isValid())
     {
         for (auto const &  jet : *L2CaloJets_ForIsoPix_IsoHandle)
@@ -703,7 +703,7 @@ void TauNtuplizerRun3::analyze(const edm::Event& iEvent, const edm::EventSetup& 
     }
 
     // #############################################################################
-    //! TagAndProbe on L1T taus
+    //! TagAndProbe on L1T taus  
     edm::Handle< BXVector<l1t::Tau> >  L1TauHandle;
     iEvent.getByToken(_L1TauTag, L1TauHandle);
 
@@ -764,34 +764,34 @@ void TauNtuplizerRun3::analyze(const edm::Event& iEvent, const edm::EventSetup& 
     }
 
     // store offline tau information
-    _tauPt = tau -> pt();
+    _tauPt  = tau -> pt();
     _tauEta = tau -> eta();
     _tauPhi = tau -> phi();
-    _tauDM = tau -> decayMode();
+    _tauDM  = tau -> decayMode();
     
     _byLooseCombinedIsolationDeltaBetaCorr3Hits = tau->tauID("byLooseCombinedIsolationDeltaBetaCorr3Hits");
     _byMediumCombinedIsolationDeltaBetaCorr3Hits = tau->tauID("byMediumCombinedIsolationDeltaBetaCorr3Hits");
     _byTightCombinedIsolationDeltaBetaCorr3Hits = tau->tauID("byTightCombinedIsolationDeltaBetaCorr3Hits");
-    _byVVVLooseDeepTau2017v2p1VSe = tau->tauID("byVVVLooseDeepTau2017v2p1VSe");
-    _byVVLooseDeepTau2017v2p1VSe = tau->tauID("byVVLooseDeepTau2017v2p1VSe");
-    _byVLooseDeepTau2017v2p1VSe = tau->tauID("byVLooseDeepTau2017v2p1VSe");
-    _byLooseDeepTau2017v2p1VSe = tau->tauID("byLooseDeepTau2017v2p1VSe");
-    _byMediumDeepTau2017v2p1VSe = tau->tauID("byMediumDeepTau2017v2p1VSe");
-    _byTightDeepTau2017v2p1VSe = tau->tauID("byTightDeepTau2017v2p1VSe");
-    _byVTightDeepTau2017v2p1VSe = tau->tauID("byVTightDeepTau2017v2p1VSe");
-    _byVVTightDeepTau2017v2p1VSe = tau->tauID("byVVTightDeepTau2017v2p1VSe");
-    _byVVVLooseDeepTau2017v2p1VSjet = tau->tauID("byVVVLooseDeepTau2017v2p1VSjet");
-    _byVVLooseDeepTau2017v2p1VSjet = tau->tauID("byVVLooseDeepTau2017v2p1VSjet");
-    _byVLooseDeepTau2017v2p1VSjet = tau->tauID("byVLooseDeepTau2017v2p1VSjet");
-    _byLooseDeepTau2017v2p1VSjet = tau->tauID("byLooseDeepTau2017v2p1VSjet");
-    _byMediumDeepTau2017v2p1VSjet = tau->tauID("byMediumDeepTau2017v2p1VSjet");
-    _byTightDeepTau2017v2p1VSjet = tau->tauID("byTightDeepTau2017v2p1VSjet");
-    _byVTightDeepTau2017v2p1VSjet = tau->tauID("byVTightDeepTau2017v2p1VSjet");
-    _byVVTightDeepTau2017v2p1VSjet = tau->tauID("byVVTightDeepTau2017v2p1VSjet");
-    _byVLooseDeepTau2017v2p1VSmu = tau->tauID("byVLooseDeepTau2017v2p1VSmu");
-    _byLooseDeepTau2017v2p1VSmu = tau->tauID("byLooseDeepTau2017v2p1VSmu");
-    _byMediumDeepTau2017v2p1VSmu = tau->tauID("byMediumDeepTau2017v2p1VSmu");
-    _byTightDeepTau2017v2p1VSmu = tau->tauID("byTightDeepTau2017v2p1VSmu");
+    _byVVVLooseDeepTau2017v2p1VSe = tau->tauID("byDeepTau2018v2p5VSjetraw");
+    //_byVVLooseDeepTau2017v2p1VSe = tau->tauID("byVVLooseDeepTau2017v2p1VSe");
+    //_byVLooseDeepTau2017v2p1VSe = tau->tauID("byVLooseDeepTau2017v2p1VSe");
+    //_byLooseDeepTau2017v2p1VSe = tau->tauID("byLooseDeepTau2017v2p1VSe");
+    //_byMediumDeepTau2017v2p1VSe = tau->tauID("byMediumDeepTau2017v2p1VSe");
+    //_byTightDeepTau2017v2p1VSe = tau->tauID("byTightDeepTau2017v2p1VSe");
+    //_byVTightDeepTau2017v2p1VSe = tau->tauID("byVTightDeepTau2017v2p1VSe");
+    //_byVVTightDeepTau2017v2p1VSe = tau->tauID("byVVTightDeepTau2017v2p1VSe");
+    //_byVVVLooseDeepTau2017v2p1VSjet = tau->tauID("byVVVLooseDeepTau2017v2p1VSjet");
+    //_byVVLooseDeepTau2017v2p1VSjet = tau->tauID("byVVLooseDeepTau2017v2p1VSjet");
+    //_byVLooseDeepTau2017v2p1VSjet = tau->tauID("byVLooseDeepTau2017v2p1VSjet");
+    //_byLooseDeepTau2017v2p1VSjet = tau->tauID("byLooseDeepTau2017v2p1VSjet");
+    //_byMediumDeepTau2017v2p1VSjet = tau->tauID("byMediumDeepTau2017v2p1VSjet");
+    //_byTightDeepTau2017v2p1VSjet = tau->tauID("byTightDeepTau2017v2p1VSjet");
+    //_byVTightDeepTau2017v2p1VSjet = tau->tauID("byVTightDeepTau2017v2p1VSjet");
+    //_byVVTightDeepTau2017v2p1VSjet = tau->tauID("byVVTightDeepTau2017v2p1VSjet");
+    //_byVLooseDeepTau2017v2p1VSmu = tau->tauID("byVLooseDeepTau2017v2p1VSmu");
+    //_byLooseDeepTau2017v2p1VSmu = tau->tauID("byLooseDeepTau2017v2p1VSmu");
+    //_byMediumDeepTau2017v2p1VSmu = tau->tauID("byMediumDeepTau2017v2p1VSmu");
+    //_byTightDeepTau2017v2p1VSmu = tau->tauID("byTightDeepTau2017v2p1VSmu");
     
     _againstMuonLoose3 = tau->tauID("againstMuonLoose3");
     _againstMuonTight3 = tau->tauID("againstMuonTight3");

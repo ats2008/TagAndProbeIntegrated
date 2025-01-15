@@ -1,6 +1,0 @@
-/store/mc/Run3Winter23MiniAOD/VBFHToTauTau_M125_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/126X_mcRun3_2023_forPU65_v1-v2/50000/3153a3e2-fe37-4e90-b1e8-e96e5f4c28ef.root
-/store/mc/Run3Winter23MiniAOD/VBFHToTauTau_M125_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/126X_mcRun3_2023_forPU65_v1-v2/40000/ab194440-61d1-4159-ae96-48fce13c8205.root
-/store/mc/Run3Winter23MiniAOD/VBFHToTauTau_M125_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/126X_mcRun3_2023_forPU65_v1-v2/40000/f9cb6bb2-dd9b-43ca-a628-7932721cca4f.root
-/store/mc/Run3Winter23MiniAOD/VBFHToTauTau_M125_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/126X_mcRun3_2023_forPU65_v1-v2/40000/4acbecbc-9046-40d5-b385-a83121595995.root
-/store/mc/Run3Winter23MiniAOD/VBFHToTauTau_M125_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/126X_mcRun3_2023_forPU65_v1-v2/40000/e2f84afd-00f3-4aae-8061-0c372c65ee28.root
-/store/mc/Run3Winter23MiniAOD/VBFHToTauTau_M125_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/126X_mcRun3_2023_forPU65_v1-v2/40000/53908342-7757-49eb-ba7f-582a19f3e794.root

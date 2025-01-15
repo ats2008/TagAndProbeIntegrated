@@ -1,5 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
+from EventFilter.L1TRawToDigi.gtStage2Digis_cfi import gtStage2Digis
+#from PhysicsTools.PatAlgos.triggerLayer1.triggerProducer_cfi import patTrigger
+from PhysicsTools.PatAlgos.slimming.selectedPatTrigger_cfi import selectedPatTrigger
+from PhysicsTools.PatAlgos.slimming.slimmedPatTrigger_cfi import slimmedPatTrigger
+
 print("Running on data")
 
 # filter HLT paths for T&P
@@ -142,7 +147,9 @@ hltFilter = hlt.hltHighLevel.clone(
 
 ## only events where slimmedMuons has exactly 1 muon
 muonNumberFilter = cms.EDFilter ("muonNumberFilter",
-    src = cms.InputTag("slimmedMuons")
+    src  = cms.InputTag("muons"),
+    taus = cms.InputTag("hpsPFTauProducer"),
+    met  = cms.InputTag("pfMetPuppi")
 )
 
 ## good muons for T&P
@@ -163,10 +170,10 @@ goodTaus = cms.EDFilter("PATTauRefSelector",
         cut = cms.string(
                 'pt > 20 && abs(eta) < 2.1 ' #kinematics
                 '&& abs(charge) > 0 && abs(charge) < 2 ' #sometimes 2 prongs have charge != 1
-                '&& tauID("decayModeFinding") > 0.5 ' # tau ID
-                '&& tauID("byVVLooseDeepTau2017v2p1VSjet") > 0.5 ' # anti-Jet VVLoose (medium)
-                '&& tauID("byVLooseDeepTau2017v2p1VSmu") > 0.5 ' # anti-Muon VLoose (tight)
-                '&& tauID("byVVVLooseDeepTau2017v2p1VSe") > 0.5 ' # anti-Ele VVVloose (Loose)
+                '&& tauID("decayModeFindingNewDMs") > 0.5 ' # tau ID
+                '&& tauID("byVVLooseDeepTau2018v2p5VSjet") > 0.5 ' # anti-Jet VVLoose (medium)
+                '&& tauID("byVLooseDeepTau2018v2p5VSmu") > 0.5 ' # anti-Muon VLoose (tight)
+                '&& tauID("byVVVLooseDeepTau2018v2p5VSe") > 0.5 ' # anti-Ele VVVloose (Loose)
                 # 'pt>0 && abs(eta) < 2.1'
         ),
         filter = cms.bool(True)
@@ -181,7 +188,7 @@ bjets = cms.EDFilter("PATJetRefSelector",
         ),
 )
 
-TagAndProbe = cms.EDFilter("TauTagAndProbeFilterRun3",
+TagAndProbe = cms.EDFilter("TauTagAndProbeFilterRun3RawReco",
                            taus  = cms.InputTag("goodTaus"),
                            muons = cms.InputTag("goodMuons"),
                            met   = cms.InputTag("slimmedMETs"),
@@ -221,9 +228,13 @@ Ntuplizer = cms.EDAnalyzer("TauNtuplizerRun3",
     stageL1Trigger = cms.uint32(2)
 )
 
-TAndPseq = cms.Sequence(
+filterSeq = cms.Sequence(
     hltFilter        +
-    muonNumberFilter +
+    muonNumberFilter 
+  )
+
+TAndPseq = cms.Sequence(
+    filterSeq        +
     goodMuons        +
     goodTaus         +
     bjets            +
